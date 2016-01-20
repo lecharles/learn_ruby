@@ -1,5 +1,9 @@
 require "pry"
 
+def split_into_words(sentence)
+  sentence.split(" ")
+end
+
 #convert string to array
 def split_into_array(word)
   word.split("")
@@ -26,10 +30,15 @@ def back_to_s(array)
 end
 
 #make one final latin-translation method
-def translate(word)
-  # binding.pry
+def translate_word(word)
   split_array = split_into_array(word)
   rotated_array = rotate_at_vindex(split_array)
   ay_array = add_ay(rotated_array)
   final_array = back_to_s(ay_array)
+end
+
+def translate(sentence)
+  sentece_array = split_into_words(sentence)
+  # binding.pry
+  sentece_array.map! { |word| word = translate_word(word) }
 end
