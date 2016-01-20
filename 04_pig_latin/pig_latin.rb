@@ -40,5 +40,5 @@ end
 def translate(sentence)
   sentece_array = split_into_words(sentence)
   # binding.pry
-  sentece_array.map! { |word| word = translate_word(word) }
+    sentece_array.map! { |word| word = translate_word(word) }
 end
